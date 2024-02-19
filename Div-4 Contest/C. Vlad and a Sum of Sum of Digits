@@ -1,0 +1,49 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+#define int long long
+#define opti ios_base::sync_with_stdio(false);
+#define mise cin.tie(NULL);
+
+int sumOfDigits(int num) {
+    int sum = 0;
+    while (num > 0) {
+        sum += num % 10;
+        num /= 10;
+    }
+    return sum;
+}
+
+int sumOfDigitsInRange(int n) {
+    int repeatSum = 45;
+
+    int fullRepeats = n / 9;
+
+    int remainingNumbers = n % 9;
+
+    if (remainingNumbers == 0) {
+        remainingNumbers = 9;
+    }
+
+
+    int remainingSum = sumOfDigits(remainingNumbers);
+
+    return repeatSum * fullRepeats + remainingSum;
+}
+
+signed main() {
+    opti mise
+
+    int t;
+    cin >> t;
+
+    while (t--) {
+        int n;
+        cin >> n;
+
+        int totalsum = sumOfDigitsInRange(n);
+        cout <<endl<< totalsum << endl;
+    }
+
+    return 0;
+}
