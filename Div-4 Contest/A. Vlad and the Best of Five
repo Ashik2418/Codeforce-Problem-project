@@ -1,0 +1,35 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define int long long
+#define opti ios_base::sync_with_stdio(false);
+#define mise cin.tie(NULL);
+
+signed main() {
+    opti mise
+
+    int t;
+    cin >> t;
+
+    while(t--) {
+        char s;
+        int countA = 0, countB = 0;
+
+        for(int i = 1; i < 6; i++) {
+            cin >> s;
+            if(s == 'A') {
+                countA++;
+            }
+            else if(s == 'B') {
+                countB++;
+            }
+        }
+
+        if(countA > countB) {
+            cout << "A" << endl;
+        } else {
+            cout << "B" << endl;
+        }
+    }
+
+    return 0;
+}
